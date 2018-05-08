@@ -1,18 +1,22 @@
 package main
 
 import(
-    "fmt"
+	"html/template"
     "net/http"
     "log"
 )
 
 func handler(w http.ResponseWriter, r *http.Request){
-    fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
+	tmpl, _ := template.ParseFiles("./html/home.html", "./html/default.html")
+	tmpl.ExecuteTemplate(w, "layout", nil)
 }
 
 
 func main(){
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+
     http.HandleFunc("/", handler)
-    log.Info("hello")
-    log.Fatal(http.ListenAndServe(":8080", nil))
+    log.Println("Listening...")
+    http.ListenAndServe(":8080", nil)
 }

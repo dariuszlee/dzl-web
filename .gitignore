@@ -1,5 +1,8 @@
 *
-
+!html
+!html/*.html
+!static
+!static/**/*.css
 !*.go
-!.gitignore
 
+!.gitignore
