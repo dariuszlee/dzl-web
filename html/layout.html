@@ -1,0 +1,36 @@
+{{define "layout"}} 
+<!doctype html> 
+<html> 
+	<head> 
+		<meta charset="utf-8"> 
+		<title>{{template "title"}}
+		</title> 
+		<link rel="stylesheet" href="/static/css/main.css"> 
+		<link rel="stylesheet" href="/static/css/spectre.css"> 
+	</head> 
+	<body> 
+		<header class="columns">
+			<section class="column col-8 header navbar">
+				<div id="header-name">
+					<span class="header-span-name">Darius Lee</span>
+				</div>
+			</section>
+			<!-- <section class="column col-> -->
+			<!-- 	DZL -->
+			<!-- </section> -->
+			<section class="column col-4 col-mr-auto header navbar">
+				<!-- <div class="header head-item column col-1">About</div> -->
+				<!-- <div class="header head-item column col-1">Blog</div> -->
+				<!-- <div class="header head-item column col-1">Github</div> -->
+				<!-- <div class="header head-item column col-1">Home</div> -->
+				<a class="header hyper">About</a>
+				<a class="header hyper">Blog</a>
+				<a class="header hyper">Github</a>
+			</section>
+		</header>
+		{{template "body"}} 
+		<footer class="footer columns">
+		</footer>
+	</body> 
+</html> 
+{{end}}

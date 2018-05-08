@@ -1,24 +1,14 @@
-{{define "layout"}} 
-<!doctype html> 
-<html> 
-	<head> 
-		<meta charset="utf-8"> 
-		<title>{{template "title"}}
-		</title> 
-		<link rel="stylesheet" href="/static/css/main.css"> 
-		<link rel="stylesheet" href="/static/css/spectre.css"> 
-	</head> 
-	<body> 
-		<div class="columns">
-			<div id="header-name" class="header column col-8">Darius Lee</div>
-			<div class="header head-item column col-1">About</div>
-			<div class="header head-item column col-1">Blog</div>
-			<div class="header head-item column col-1">Github</div>
-			<div class="header head-item column col-1">Home</div>
-		</div>
-		{{template "body"}} 
-		<div class="footer">
-		</div>
-	</body> 
-</html> 
+{{define "title"}}
+Dzlyy: Home
+{{end}} 
+
+{{define "body"}} 
+<div class="bodycontcont columns">
+	<div class="column col-12 columns bodycont">
+		<div class="card column col-6 post "></div>
+		<div class="card column col-6 post "></div>
+		<div class="card column col-6 post "></div>
+		<div class="card column col-6 post "></div>
+	</div>
+</div>
 {{end}}

@@ -3,6 +3,8 @@
 !html/*.html
 !static
 !static/**/*.css
+!db
 !*.go
+!*.txt
 
 !.gitignore
