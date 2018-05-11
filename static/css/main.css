@@ -1,39 +1,43 @@
 .header
 {
-	height : 39px;
-	line-height : 39px;
-	background-color : #804515;
+	height : 3.5em;
+	line-height : 3.5em;
+	background-color : #AA6C39;
+}
+
+
+#header-section
+{
 }
 
 #header-name
 {
 	padding-left: 20px;
 	color : #FFD1AA;
-	font-size : 22px;
+	font-size : 1.8em;
 }
 
-#header-span-name
+#header-right
 {
-	color : #FFD1AA;
-}
-
-.hyper:hover
-{
-	text-decoration : none;
-}
-
-.hyper
-{
-	text-decoration : none;
-	color : #FFD1AA;
-	font-size : 20px;
+	padding-right: 20px;
 }
 
 .head-item
 {
 	text-align : center;
 	vertical-align : middle;
-	font-size : 19px;
+}
+
+.hyper:hover {
+	text-decoration : none;
+	color : #FFD1AA;
+}
+
+.hyper
+{
+	text-decoration : none;
+	color : #FFD1AA;
+	font-size : 1.2em;
 }
 
 .bodycontcont
@@ -42,8 +46,9 @@
 	height : 100%;
 }
 
-.bodycont
+#back
 {
+	background-color: #FFD1AA;
 }
 
 .post
@@ -51,11 +56,22 @@
 	height : 100px;
 	line-height : 100px;
 	background-color : #804515;
+	margin-top: 11px;
+	margin-bottom: 11px;
+}
+
+.w-wrap
+{
+	float : right;
+}
+
+#long-card
+{
+	height : 350px;
 }
 
 .footer
 {
-	height : 39px;
-	background-color : #552700;
-	margin-right : 8px;
+	height : 2.5em;
+	background-color : #header;
 }
