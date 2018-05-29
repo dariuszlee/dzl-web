@@ -20,6 +20,6 @@
 
 # markdown folder
 !markdown
-*.md
+!*.md
 
 !.gitignore
