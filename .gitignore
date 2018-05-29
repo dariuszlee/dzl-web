@@ -1,10 +1,25 @@
 *
+
+# html dir
 !html
 !html/*.html
+
+# static dir
 !static
 !static/**/*.css
+
 !db
+
+# go files
 !*.go
 !*.txt
+
+# nginx folder
+!nginx
+!*.conf
+
+# markdown folder
+!markdown
+*.md
 
 !.gitignore
