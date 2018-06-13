@@ -9,22 +9,27 @@ import (
 type blog struct {
 	Title       string
 	Description string
+	Id          int
 }
 
 type project struct {
 	Title       string
 	Description string
+	Id          int
 }
 
 type homepage struct {
-	Projects []project
-	Blogs    []blog
+	ActiveProject project
+	Projects      []project
+	ActiveBlog    blog
+	Blogs         []blog
 }
 
 func handlerHome(w http.ResponseWriter, r *http.Request) {
-	blogs := getBlogs()
-	projs := getProjects()
-	homeData := homepage{projs, blogs}
+	slider := 5
+	blogs := getBlogs(slider)
+	projs := getProjects(slider)
+	homeData := homepage{projs[0], projs[1:], blogs[0], blogs[1:]}
 	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/home.html")
 	tmpl.ExecuteTemplate(w, "layout", homeData)
 }

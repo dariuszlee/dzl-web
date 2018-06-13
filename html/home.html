@@ -17,11 +17,31 @@ Dzlyy: Home
 	<div class="my-5">
 		<h4 class="text-center">Most recent</h4>
 	</div>
-	<div class="row">
-		{{ range .Blogs }}
-		<div class="col-12 col-md-6 col-lg-4 my-2">
-			<div class="card">
-				<div class="card-body">
+	<div id="blogSlide" class="carousel slide" data-interval="3000" data-ride="carousel">
+		<ul class="carousel-indicators">
+			<li data-target="#blogSlide" data-slide-to="{{.ActiveBlog.Id}}" class="active"></li>
+			{{ range .Blogs }}
+			<li data-target="#blogSlide" data-slide-to="{{.Id}}" ></li>
+			{{ end }}
+		</ul>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="d-block w-100" style="height:300px;width:100%;background-color:#555555">
+				</div>
+				<div class="carousel-caption">
+					<h5>
+						{{ .ActiveBlog.Title }}
+					</h5>
+					<p>
+						{{ .ActiveBlog.Description }}
+					</p>
+				</div>
+			</div>
+			{{ range .Blogs }}
+			<div class="carousel-item">
+				<div class="d-block w-100" style="height:300px;width:100%;background-color:#555555;">
+				</div>
+				<div class="carousel-caption">
 					<h5>
 						{{ .Title }}
 					</h5>
@@ -30,17 +50,37 @@ Dzlyy: Home
 					</p>
 				</div>
 			</div>
+			{{ end }}
 		</div>
-		{{ end }}
 	</div>
 	<div class="my-5">
 		<h4 class="text-center">Projects</h4>
 	</div>
-	<div class="row">
-		{{ range .Projects }}
-		<div class="col-12 col-md-6 col-lg-4 my-2">
-			<div class="card">
-				<div class="card-body">
+	<div id="projectSlide" class="carousel slider" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#projectSlide" data-slide-to="{{.ActiveProject.Id}}" class="active"></li>
+			{{ range .Projects }}
+			<li data-target="#projectSlide" data-slide-to="{{.Id}}"></li>
+			{{ end }}
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="d-block w-100" style="height:300px;width:100%;background-color:#555555">
+				</div>
+				<div class="carousel-caption">
+					<h5>
+						{{ .ActiveProject.Title }}
+					</h5>
+					<p>
+						{{ .ActiveProject.Description }}
+					</p>
+				</div>
+			</div>
+			{{ range .Projects }}
+			<div class="carousel-item ">
+				<div class="d-block w-100" style="height:300px;width:100%;background-color:#555555;">
+				</div>
+				<div class="carousel-caption">
 					<h5>
 						{{ .Title }}
 					</h5>
@@ -49,8 +89,8 @@ Dzlyy: Home
 					</p>
 				</div>
 			</div>
+			{{ end }}
 		</div>
-		{{ end }}
 	</div>
 </div>
 {{end}}
