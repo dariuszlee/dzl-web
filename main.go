@@ -6,12 +6,6 @@ import (
 	"net/http"
 )
 
-type blog struct {
-	Title       string
-	Description string
-	Id          int
-}
-
 type project struct {
 	Title       string
 	Description string

@@ -2,6 +2,22 @@ html, body{
 	height : 100%;
 }
 
+.dzl-img {
+	filter : grayscale(80%);
+	height:100vh;
+	background-position-x:50%;
+	background-size:cover;
+	text-align:center;
+}
+.dzl-img-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 4em;
+	color : #FFFFFF;
+}
+
 .dzl-header{
 	color:#444444;
 }
