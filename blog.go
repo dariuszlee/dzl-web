@@ -1,10 +1,13 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
+	"golang.org/x/net/html"
 	"io/ioutil"
+	"log"
+	"strings"
 )
 
 type blog struct {
@@ -23,9 +26,34 @@ func getBlogs() {
 	blogList := readBlogDb()
 	blogs = make(map[int]blog)
 	for _, blog := range blogList {
-		fmt.Println("Loading blog ", blog)
+		log.Println("Loading blog ", blog)
+		blog.Description = getBlogText(150, blog.Path)
 		blogs[blog.Id] = blog
 	}
+}
+
+func getBlogText(numOfBytes int, pathToBlog string) string {
+	blog := readBlog(pathToBlog)
+	blogReader := strings.NewReader(blog)
+	tokens := html.NewTokenizer(blogReader)
+
+	var text bytes.Buffer
+	for {
+		t := tokens.Next()
+		if t == html.ErrorToken {
+			break
+		} else if t == html.TextToken {
+			text.WriteString(tokens.Token().Data)
+		} else {
+		}
+
+		if text.Len() > numOfBytes {
+			text.Truncate(numOfBytes)
+			text.WriteString("...")
+			break
+		}
+	}
+	return text.String()
 }
 
 func getNumOfBlogs(amount int) []blog {
@@ -82,5 +110,5 @@ func readBlogMarkdown() []string {
 }
 
 // func main() {
-// 	getBlogs()
+// 	log.Println(getBlogText(100, "./markdown/welcome.md"))
 // }

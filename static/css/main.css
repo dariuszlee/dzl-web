@@ -2,33 +2,61 @@ html, body{
 	height : 100%;
 }
 
-.dzl-img-full {
-	filter : blur(1px);
+.dzl-img-home {
+	z-index : 0;
+	/* filter : brightness(60%); */
 	height: calc(100vh - 69px);
-	background-position-x:50%;
+	background-position: center center;
 	background-size:cover;
+}
+
+.dzl-img-home-text {
+	z-index : 1;
+	/* filter : brightness(100%); */
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	text-align:center;
 }
 
 .dzl-img {
-	filter : blur(3px) grayscale(20%);
+	filter : brightness(60%) blur(3px) grayscale(20%);
 	width : 100%;
-	vertical-align : middle;
+	background-size: cover;
+	background-position: center center;
+	background-repeat : no-repeat;
+	text-align:center;
+}
+
+.dzl-img-full {
+	z-index : 0;
+	filter : brightness(60%);
+	height: calc(100vh - 69px);
+	background-position: center center;
+	background-size:cover;
 }
 
 .dzl-img-header {
-	filter : blur(0);
+	z-index : 1;
+	filter : brightness(100%);
 	position: absolute;
-	top: 80%;
+	top: 70%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 4em;
 	color : #FFFFFF;
+	text-align:center;
 }
 
 .dzl-img-description {
 	font-size: 0.3em;
 	color : #FFFFFF;
+}
+
+.dzl-caption {
+	top: 30%;
+	left: 50%;
 }
 
 .dzl-header{

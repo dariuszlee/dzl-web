@@ -1,10 +1,6 @@
-<br/>
-# Hello There?
-<br/>
-Hey there,  
+First post disclaimer: If you are reading this, hopefully you've found some other posts helpful and have continued stumbling to this first post.
 
-If you are reading this, hopefully you've found some other posts helpful and have continued stumbling to this first post.
-I just want to write a quick quib on why I've decided to start this journal. A lot of this will be captured in the about section but I will elaborate a little more here.
+I want to write a quick quib on why I've decided to start this journal. A lot of this will be captured in the about section but I will elaborate a little more here.
 
 ### 1. Mental Bookkeeping
 
