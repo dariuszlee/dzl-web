@@ -2,19 +2,32 @@ html, body{
 	height : 100%;
 }
 
-.dzl-img {
-	filter : grayscale(80%);
-	height:100vh;
+.dzl-img-full {
+	filter : blur(1px);
+	height: calc(100vh - 69px);
 	background-position-x:50%;
 	background-size:cover;
 	text-align:center;
 }
-.dzl-img-text {
+
+.dzl-img {
+	filter : blur(3px) grayscale(20%);
+	width : 100%;
+	vertical-align : middle;
+}
+
+.dzl-img-header {
+	filter : blur(0);
 	position: absolute;
-	top: 50%;
+	top: 80%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 4em;
+	color : #FFFFFF;
+}
+
+.dzl-img-description {
+	font-size: 0.3em;
 	color : #FFFFFF;
 }
 

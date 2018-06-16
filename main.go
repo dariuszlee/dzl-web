@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"strconv"
 )
 
 type project struct {
@@ -20,8 +21,8 @@ type homepage struct {
 }
 
 func handlerHome(w http.ResponseWriter, r *http.Request) {
-	slider := 5
-	blogs := getBlogs(slider)
+	slider := 3
+	blogs := getNumOfBlogs(slider)
 	projs := getProjects(slider)
 	homeData := homepage{projs[0], projs[1:], blogs[0], blogs[1:]}
 	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/home.html")
@@ -29,19 +30,41 @@ func handlerHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlerBlog(w http.ResponseWriter, r *http.Request) {
-	b := blog{}
-	b.Title = r.URL.Path[len("/blog/"):]
-	blog := formatBlog("./markdown/welcome.md")
+	blogIdStr := r.URL.Path[len("/blog/"):]
+	blogId, _ := strconv.Atoi(blogIdStr)
+	blogData, _ := getBlog(blogId)
+	blog := formatBlog(blogData.Path)
 	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/blog.html")
 	tmpl.Parse(blog)
-	tmpl.ExecuteTemplate(w, "layout", b)
+	tmpl.ExecuteTemplate(w, "layout", blogData)
+}
+
+func handlerAbout(w http.ResponseWriter, r *http.Request) {
+	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/about.html")
+	tmpl.ExecuteTemplate(w, "layout", nil)
+}
+
+func handlerBlogs(w http.ResponseWriter, r *http.Request) {
+	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/blogs.html")
+	tmpl.ExecuteTemplate(w, "layout", nil)
+}
+
+func handlerProjects(w http.ResponseWriter, r *http.Request) {
+	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/projects.html")
+	tmpl.ExecuteTemplate(w, "layout", nil)
 }
 
 func main() {
+	// Initialize
+	getBlogs()
+
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/blog/", handlerBlog)
+	http.HandleFunc("/about/", handlerAbout)
+	http.HandleFunc("/blogs/", handlerBlogs)
+	http.HandleFunc("/projects/", handlerProjects)
 	http.HandleFunc("/", handlerHome)
 	log.Println("Listening...")
 	http.ListenAndServe(":8080", nil)
