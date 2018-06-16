@@ -7,6 +7,7 @@ import (
 	"golang.org/x/net/html"
 	"io/ioutil"
 	"log"
+	"sort"
 	"strings"
 )
 
@@ -20,16 +21,23 @@ type blog struct {
 }
 
 var blogs map[int]blog
+var blogsSortedIds []int
 
 // Get latest only
 func getBlogs() {
 	blogList := readBlogDb()
 	blogs = make(map[int]blog)
+	blogsSortedIds = []int{}
 	for _, blog := range blogList {
 		log.Println("Loading blog ", blog)
 		blog.Description = getBlogText(150, blog.Path)
 		blogs[blog.Id] = blog
+		blogsSortedIds = append(blogsSortedIds, blog.Id)
 	}
+	sort.Slice(blogsSortedIds, func(i, j int) bool {
+		return blogsSortedIds[i] > blogsSortedIds[j]
+	})
+	log.Println(blogsSortedIds)
 }
 
 func getBlogText(numOfBytes int, pathToBlog string) string {
@@ -59,12 +67,13 @@ func getBlogText(numOfBytes int, pathToBlog string) string {
 func getNumOfBlogs(amount int) []blog {
 	count := 0
 	blogList := []blog{}
-	for _, v := range blogs {
-		if count == amount {
+	for _, v := range blogsSortedIds {
+		b := blogs[v]
+		if count == amount || b == (blog{}) {
 			break
 		}
-		v.Count = count
-		blogList = append(blogList, v)
+		b.Count = count
+		blogList = append(blogList, b)
 		count++
 	}
 	return blogList

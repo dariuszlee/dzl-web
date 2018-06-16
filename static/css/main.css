@@ -2,6 +2,14 @@ html, body{
 	height : 100%;
 }
 
+.dzl-full-screen {
+	height: calc(100vh - 69px);
+}
+
+.dzl-full-minus-header {
+	height: calc(100vh - 196px);
+}
+
 .dzl-img-home {
 	z-index : 0;
 	/* filter : brightness(60%); */
@@ -27,6 +35,7 @@ html, body{
 	background-position: center center;
 	background-repeat : no-repeat;
 	text-align:center;
+	height : 100%;
 }
 
 .dzl-img-full {
@@ -55,12 +64,14 @@ html, body{
 }
 
 .dzl-caption {
-	top: 30%;
-	left: 50%;
+	top: 40%;
+	/* text-align:center; */
 }
 
 .dzl-header{
+	z-index : 999;
 	color:#444444;
+	background-color : #FFFFFF;
 }
 
 .dzl-link{
@@ -78,4 +89,141 @@ html, body{
 
 .dzl-footer{
 	font-size: 0.8em;
+}
+
+#dcl-menu-toggle a
+{
+	text-decoration: none;
+	color: #444444;
+
+	transition: color 0.3s ease;
+}
+
+#dcl-menu-toggle a:hover
+{
+	color: tomato;
+}
+
+#dzl-menu-toggle
+{
+	display: block;
+	position: relative;
+	top: 15px;
+
+	z-index: 1;
+
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#dzl-menu-toggle input
+{
+	display: block;
+	width: 40px;
+	height: 32px;
+	position: absolute;
+	top: -7px;
+	left: -5px;
+
+	cursor: pointer;
+
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */
+
+	-webkit-touch-callout: none;
+}
+
+#dzl-menu-toggle span
+{
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+
+	background: #cdcdcd;
+	border-radius: 3px;
+
+	z-index: 1;
+
+	transform-origin: 4px 0px;
+
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+	opacity 0.55s ease;
+}
+
+#dzl-menu-toggle span:first-child
+{
+	transform-origin: 0% 0%;
+}
+
+#dzl-menu-toggle span:nth-last-child(2)
+{
+	transform-origin: 0% 100%;
+}
+
+/* 
+ *  * Transform all the slices of hamburger
+ *   * into a crossmark.
+*/
+#dzl-menu-toggle input:checked ~ span
+{
+	opacity: 1;
+	transform: rotate(45deg) translate(-2px, -1px);
+	background: #232323;
+}
+
+/*
+ *  * But let's hide the middle one.
+ *   */
+#dzl-menu-toggle input:checked ~ span:nth-last-child(3)
+{
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ *  * Ohyeah and the last one should go the other direction
+ *   */
+#dzl-menu-toggle input:checked ~ span:nth-last-child(2)
+{
+	transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ *  * Make this absolute positioned
+ *   * at the top left of the screen
+ *    */
+#dzl-menu
+{
+	position: absolute;
+	width: 200px;
+	margin: -100px 0 0 -50px;
+	padding: 50px;
+	padding-top: 125px;
+	right : -20px;
+
+	background: #ededed;
+	list-style-type: none;
+	/* to stop flickering of text in safari */
+
+	transform-origin: 0% 0%;
+	transform: translate(100%, 0);
+
+	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#dzl-menu li
+{
+	padding: 10px 0;
+	font-size: 22px;
+}
+
+/*
+ *  * And let's slide it in from the left
+ *   */
+#dzl-menu-toggle input:checked ~ ul
+{
+	transform: none;
 }
