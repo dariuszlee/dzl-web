@@ -13,11 +13,11 @@ Dzlyy: Home
 </div>
 <div class="border-bottom dzl-img-home">
 </div>
-<div class="border-bottom dzl-full-screen">
+<div class="mx-lg-5 border-bottom dzl-full-screen">
 	<div class="my-5">
-		<h4 class="text-center">Most recent</h4>
+		<h4 class="text-center">Most recent posts</h4>
 	</div>
-	<div id="blogSlide" class="container carousel slide dzl-full-minus-header" data-interval="3000" data-ride="carousel">
+	<div id="blogSlide" class="carousel slide dzl-full-minus-header" data-interval="3000" data-ride="carousel">
 		<ul class="carousel-indicators">
 			<li data-target="#blogSlide" data-slide-to="{{.ActiveBlog.Count}}" class="active"></li>
 			{{ range .Blogs }}
@@ -37,24 +37,24 @@ Dzlyy: Home
 					</p>
 				</div>
 			</a>
-			<!-- {{ range .Blogs }} -->
-			<!-- <a href="./blog/{{.Id}}" class="carousel-item dzl-full-minus-header"> -->
-			<!-- 	<div class="d-block w-100 dzl-img dzl-full-minus-header" style="background-image:url({{.Image}});"> -->
-			<!-- 	</div> -->
-			<!-- 	<div class="dzl-caption carousel-caption"> -->
-			<!-- 		<h5> -->
-			<!-- 			{{ .Title }} -->
-			<!-- 		</h5> -->
-			<!-- 		<p> -->
-			<!-- 			{{ .Description }} -->
-			<!-- 		</p> -->
-			<!-- 	</div> -->
-			<!-- </a> -->
-			<!-- {{ end }} -->
+			{{ range .Blogs }}
+			<a href="./blog/{{.Id}}" class="carousel-item dzl-full-minus-header">
+				<div class="d-block w-100 dzl-img dzl-full-minus-header" style="background-image:url({{.Image}});">
+				</div>
+				<div class="dzl-caption carousel-caption">
+					<h5>
+						{{ .Title }}
+					</h5>
+					<p>
+						{{ .Description }}
+					</p>
+				</div>
+			</a>
+			{{ end }}
 		</div>
 	</div>
 </div>
-<div class="mb-5 dzl-full-screen">
+<div class="mx-lg-5 mb-5 dzl-full-screen">
 	<div class="my-5">
 		<h4 class="text-center">Projects</h4>
 	</div>

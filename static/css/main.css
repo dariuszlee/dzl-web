@@ -71,6 +71,8 @@ html, body{
 .dzl-header{
 	z-index : 999;
 	color:#444444;
+	position:fixed;
+	width:100%;
 	background-color : #FFFFFF;
 }
 
@@ -202,7 +204,7 @@ html, body{
 	margin: -100px 0 0 -50px;
 	padding: 50px;
 	padding-top: 125px;
-	right : -20px;
+	right : -70px;
 
 	background: #ededed;
 	list-style-type: none;
