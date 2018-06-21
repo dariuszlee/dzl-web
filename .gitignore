@@ -21,5 +21,7 @@
 # markdown folder
 !markdown
 !*.md
+!markdown/blog.json
+
 
 !.gitignore

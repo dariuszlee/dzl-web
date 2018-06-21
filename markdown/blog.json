@@ -1,0 +1,20 @@
+[
+	{
+		"Title" : "First Post: Hello World?",
+		"Path" : "./markdown/welcome.md",
+		"Image" : "https://i.imgur.com/mJ0NvPe.jpg",
+		"Id" : 20180601
+	},
+	{
+		"Title" : "Quick, Trendy Gifs and Code...",
+		"Path" : "./markdown/blog-tips.md",
+		"Image" : "https://i.imgur.com/Fs2m7th.jpg",
+		"Id" : 20180605
+	},
+	{
+		"Title" : "Global Dot Config",
+		"Path" : "./markdown/dotconfig.md",
+		"Image" : "https://i.imgur.com/njQeGEP.png",
+		"Id" : 20180609
+	}
+]
