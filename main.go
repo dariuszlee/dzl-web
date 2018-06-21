@@ -13,6 +13,10 @@ type project struct {
 	Id          int
 }
 
+type blogPage struct {
+	Blogs []blog
+}
+
 type homepage struct {
 	ActiveProject project
 	Projects      []project
@@ -45,8 +49,12 @@ func handlerAbout(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlerBlogs(w http.ResponseWriter, r *http.Request) {
+	pageSize := 10
+	var blogs blogPage
+	blogs.Blogs = getNumOfBlogs(pageSize)
+	log.Println(blogs.Blogs)
 	tmpl, _ := template.ParseFiles("./html/layout.html", "./html/blogs.html")
-	tmpl.ExecuteTemplate(w, "layout", nil)
+	tmpl.ExecuteTemplate(w, "layout", blogs)
 }
 
 func handlerProjects(w http.ResponseWriter, r *http.Request) {

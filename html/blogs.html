@@ -1,9 +1,19 @@
 {{define "title"}}
-Dzlyy: {{.Title}}
+Dzlyy: Blogs
 {{end}} 
 
 {{define "body"}}
-<div class="container">
-	Blogs page works
+<div class="my-5 container">
+	<h3 class="my-5">Blogs</h3>
+	{{ range .Blogs }}
+	<a class="my-2 row col-12 dzl-blogs-img" href="/blog/{{.Id}}">
+		<div class="dzl-blogs-img" style="background-image:url({{.Image}});">
+		</div>
+		<div class="col dzl-blogs-txt">
+			<h5 class="dzl-blogs-head">{{.Title}}</h5>
+			<p class="dzl-blogs-txt">{{.Description}}<p>
+		</div>
+	</a>
+	{{end }}
 </div>
 {{end}}

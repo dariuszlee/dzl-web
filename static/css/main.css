@@ -2,6 +2,33 @@ html, body{
 	height : 100%;
 }
 
+.dzl-blogs-txt{
+	color:#000000;
+	text-align : left;
+	font-size : 0.9em;
+	text-overflow : clip;
+	overflow : hidden;
+}
+
+.dzl-blogs-head{
+	color:#888888;
+	text-align : left;
+}
+
+.dzl-blogs-head:hover{
+	color:#555555;
+	text-decoration:none;
+}
+
+.dzl-blogs-img {
+	height:100px;
+	width:150px;
+	background-size: 150px 100px;
+	background-repeat: no-repeat;
+	filter : grayscale(20%);
+	overflow : hidden;
+}
+
 .dzl-full-screen {
 	height: calc(100vh - 69px);
 }
