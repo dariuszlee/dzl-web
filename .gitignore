@@ -7,6 +7,8 @@
 # static dir
 !static
 !static/**/*.css
+!static/img
+!static/img/ottawa.jpg
 
 !db
 
