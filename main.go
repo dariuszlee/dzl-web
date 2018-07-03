@@ -75,5 +75,5 @@ func main() {
 	http.HandleFunc("/projects/", handlerProjects)
 	http.HandleFunc("/", handlerHome)
 	log.Println("Listening...")
-	http.ListenAndServe(":8080", nil)
+	log.Panic(http.ListenAndServe(":8080", nil))
 }

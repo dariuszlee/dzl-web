@@ -4,10 +4,20 @@ Dzlyy: Blogs
 
 {{define "body"}}
 <div class="my-5 container">
-	<h3 class="my-5">Blogs</h3>
+	<div class="my-5">
+		<div class="my-2">
+			<input class="rounded pl-3" style="height:50px;width:80%;" type="search" id="search" placeholder="Not implmented fuzzy search..."/>
+		</div>
+		<!-- <div class="my-2"> -->
+		<!-- 	<h5>Tag Feature To Come</h5> -->
+		<!-- </div> -->
+		<!-- <div class="my-2"> -->
+		<!-- 	<h5>Post Age feature to come</h5> -->
+		<!-- </div> -->
+	</div>
 	{{ range .Blogs }}
 	<a class="my-2 row col-12 dzl-blogs-img" href="/blog/{{.Id}}">
-		<div class="dzl-blogs-img" style="background-image:url({{.Image}});">
+		<div class="rounded dzl-blogs-img" style="background-image:url({{.Image}});">
 		</div>
 		<div class="col dzl-blogs-txt">
 			<h5 class="dzl-blogs-head">{{.Title}}</h5>

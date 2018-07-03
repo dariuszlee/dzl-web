@@ -17,7 +17,7 @@
 	<body > 
 		<div class="d-flex flex-column" style="height:100%">
 			<div class="border-bottom dzl-header ">
-				<header class="navbar mx-lg-5" >
+				<header class="navbar" >
 					<div class="col mt-2 mr-auto row justify-content-start">
 						<a href="/" class="dzl-link">
 							<h3>Dzlyy</h3>
@@ -43,9 +43,6 @@
 									<a class="dzl-link" href="/blogs">
 										<li >Blogs</li>
 									</a>
-									<a class="dzl-link" href="/projects">
-										<li >Projects</li>
-									</a>
 									<a class="dzl-link" href="https://github.com/dariuszlee">
 										<li >Github</li>
 									</a>
@@ -60,17 +57,15 @@
 					{{template "body" . }} 
 				</div>
 				<div class="dzl-footer border-top">
-					<div class="mx-1 mx-lg-5">
-						<div class="row my-3">
-							<div class="col flex-column">
-								<a class="dzl-link dzl-a-footer" href="https://github.com/dariuszlee/dzl-web/issues">Report an issue</a>
-							</div>
-							<div class="col flex-column">
-							</div>
-							<div class="row col flex-column">
-								<div class="text-right">by Darius Lee</div>
-								<div class="text-right">created June 2018</div>
-							</div>
+					<div class="my-3 navbar">
+						<div class="col mr-auto flex-column">
+							<a class="dzl-link dzl-a-footer" href="https://github.com/dariuszlee/dzl-web/issues">Report an issue</a>
+						</div>
+						<div class="col mx-auto flex-column">
+						</div>
+						<div class="row col ml-auto flex-column">
+							<div class="text-right">by Darius Lee</div>
+							<div class="text-right">created June 2018</div>
 						</div>
 					</div>
 				</div>
