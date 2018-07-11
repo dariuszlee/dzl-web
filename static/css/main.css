@@ -21,8 +21,8 @@ html, body{
 
 .dzl-about-headshot {
 	z-index:1;
-	max-width:250px;
-	max-height:250px;
+	width:200px;
+	height:200px;
 	text-align : center;
 }
 
@@ -118,11 +118,11 @@ html, body{
 
 .dzl-blogs-img {
 	height:200px;
-	width:200px;
-	background-size: 200px 200px;
+	width:300px;
+	background-size: 300px 200px;
 	background-repeat: no-repeat;
 	background-position: center center;
-	filter : grayscale(20%);
+	opacity : 0.9;
 	overflow : hidden;
 }
 
