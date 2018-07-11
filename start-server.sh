@@ -1,3 +1,3 @@
 #!/bin/bash
 
-gin 
+gin -a 8080 *.go
