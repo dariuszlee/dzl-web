@@ -17,6 +17,7 @@ type blog struct {
 	Path        string
 	Image       string
 	Id          int
+	Date        string
 	Count       int
 }
 

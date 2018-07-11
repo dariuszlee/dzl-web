@@ -23,5 +23,11 @@
 !*.md
 !markdown/blog.json
 
+# nginx conf
+!nginx
+!nginx/nginx.conf
+
+# Start script
+!start-server.sh
 
 !.gitignore

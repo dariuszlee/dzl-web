@@ -4,23 +4,42 @@ Dzlyy: {{.Title}}
 
 {{define "body"}}
 <!-- <div class="mx-lg-5"> -->
-<div class="container">
-	<div class="py-5 row border-bottom">
-		<div class="col">
-			<div class="mx-auto" style="z-index:1;max-width:250px;max-height:400px">
-				<img class="rounded-circle img-fluid" style="z-index:0"src="https://imgur.com/MuKXrzR.jpg">
-				</img>
-			</div>
+<div class="border-bottom dzl-about-hdr">
+	<div class="dzl-about-bkg">
+	</div>
+	<div class="py-5 row ">
+		<div class="col" style="text-align:center">
+			<img class="border dzl-about-headshot rounded-circle img-fluid" style="z-index:0"src="https://imgur.com/MuKXrzR.jpg">
+			</img>
 		</div>
 		<div class="col my-auto">
 			<div style="max-width:400px;">
 				<h3>Darius Z Lee</h3>
-				<p>Hey, I'm a 24 year old software developer from Ottawa, Canada. I breathe, eat, and sleep. I also like using my legs sometimes.</p>
+				<p>Hey, I'm a 24 year old software developer from Ottawa, Canada. I breathe, eat, and sleep.</p>
 			</div>
 		</div>
 	</div>
+</div>
+<div class="container">
 	<div class="row mx-auto">
-		<div class="py-5 col-12 col-md-6">
+		<div class="border-bottom py-5 col-12" >
+			<div class="mx-auto" style="max-width:400px;text-align:left"> 
+				<h2>Short Resume</h2>
+				<div class="my-4">
+					<h5>Education</h5>
+					<ul>
+						<li>Honours in Computer Science - University of Ottawa</li>
+					</ul>
+				</div>
+				<h5>Experience</h5>
+				<ul>
+					<li>Software Developer at Ericsson, Canada : August 2017 to Present</li>
+					<li>Software Consultant at CMHC : October 2016 to April 2017</li>
+					<li>Software Developer at Foci Solutions : April 2016 to October 2016</li>
+				</ul>
+			</div>
+		</div>
+		<div class="py-5 pt-lg-5 col-12 col-lg-6">
 			<div class="mx-auto" style="max-width:400px;">
 				<h3>Quick Facts</h3>
 				<ul>
@@ -30,8 +49,8 @@ Dzlyy: {{.Title}}
 				</ul>
 			</div>
 		</div>
-		<div class="py-5 col-12 col-md-6">
-			<div class="mx-auto mx-md-0" style="max-width:400px;">
+		<div class="py-5 col-12 col-lg-6">
+			<div class="mx-auto" style="max-width:400px;">
 				<h3>Hobbies</h3>
 				<ul>
 					<li>Learning and contributing to the open source landscape.</li>
