@@ -1,0 +1,25 @@
+{
+  "name": "dzl-web",
+  "version": "1.0.0",
+  "description": "I don't use social media, I don't have front end experience, I don't have a blog.....",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "sass": "^1.10.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariuszlee/dzl-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dariuszlee/dzl-web/issues"
+  },
+  "homepage": "https://github.com/dariuszlee/dzl-web#readme"
+}
