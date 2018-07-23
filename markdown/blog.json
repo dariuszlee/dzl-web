@@ -19,5 +19,12 @@
 		"Image" : "https://i.imgur.com/njQeGEP.png",
 		"Id" : 20180702,
 		"Date" : "July 2, 2018"
+	},
+	{
+		"Title" : "Crypto 1: RSA Simplified",
+		"Path" : "./markdown/crypto-rsa-1.md",
+		"Image" : "https://i.imgur.com/7XfViDE.png",
+		"Id" : 20180711,
+		"Date" : "July 11, 2018"
 	}
 ]

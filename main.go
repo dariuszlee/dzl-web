@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"html/template"
 	"log"
 	"net/http"
@@ -75,5 +76,13 @@ func main() {
 	http.HandleFunc("/projects/", handlerProjects)
 	http.HandleFunc("/", handlerHome)
 	log.Println("Listening...")
-	log.Panic(http.ListenAndServe(":8080", nil))
+
+	var isDebug = flag.Bool("d", true, "Set debug mode")
+	flag.Parse()
+
+	if *isDebug {
+		log.Panic(http.ListenAndServe(":8081", nil))
+	} else {
+		log.Panic(http.ListenAndServe(":8080", nil))
+	}
 }
