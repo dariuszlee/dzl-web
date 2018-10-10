@@ -26,5 +26,12 @@
 		"Image" : "https://i.imgur.com/7XfViDE.png",
 		"Id" : 20180711,
 		"Date" : "July 11, 2018"
+	},
+	{
+		"Title" : "Certbot - Encrypt Everything: Quick Recap",
+		"Path" : "./markdown/certbot.md",
+		"Image" : "https://i.imgur.com/WAbKm2f.jpg",
+		"Id" : 20181010,
+		"Date" : "October 10, 2018"
 	}
 ]
