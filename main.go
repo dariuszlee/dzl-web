@@ -79,6 +79,7 @@ func main() {
 
 	var isDebug = flag.Bool("d", true, "Set debug mode")
 	flag.Parse()
+	log.Printf("Is debug: %t", *isDebug)
 
 	if *isDebug {
 		log.Panic(http.ListenAndServe(":8081", nil))
